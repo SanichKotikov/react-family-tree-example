@@ -1,0 +1,32 @@
+{
+  "name": "react-family-tree-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "classnames": "2.2.6",
+    "pinch-zoom-pan": "2.0.0",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-family-tree": "0.0.1",
+    "typescript": "3.2.2"
+  },
+  "devDependencies": {
+    "@types/classnames": "2.2.6",
+    "@types/node": "10.12.18",
+    "@types/react": "16.7.18",
+    "@types/react-dom": "16.0.11",
+    "react-scripts": "2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

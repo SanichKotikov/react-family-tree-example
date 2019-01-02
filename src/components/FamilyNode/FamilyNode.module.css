@@ -1,0 +1,20 @@
+.root {
+  position: absolute;
+  display: flex;
+  padding: 10px;
+}
+
+.inner {
+  display: flex;
+  flex: 1;
+  border: 2px solid rgba(0, 0, 0, .2);
+  border-radius: 10px;
+}
+
+.male {
+  background: #a4ecff;
+}
+
+.female {
+  background: #fdaed8;
+}

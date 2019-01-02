@@ -1,0 +1,195 @@
+[
+  {
+    "id": "HkqEDLvxE",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "011jVS4rb",
+        "type": "blood"
+      },
+      {
+        "id": "PXACjDxmR",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "kuVISwh7w",
+        "type": "blood"
+      },
+      {
+        "id": "UIEjvLJMd",
+        "type": "blood"
+      }
+    ],
+    "spouses": [],
+    "children": []
+  },
+  {
+    "id": "011jVS4rb",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "HkqEDLvxE",
+        "type": "blood"
+      },
+      {
+        "id": "kuVISwh7w",
+        "type": "blood"
+      },
+      {
+        "id": "UIEjvLJMd",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "PXACjDxmR",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "PXACjDxmR",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "HkqEDLvxE",
+        "type": "blood"
+      },
+      {
+        "id": "kuVISwh7w",
+        "type": "blood"
+      },
+      {
+        "id": "UIEjvLJMd",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "011jVS4rb",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "kuVISwh7w",
+    "gender": "male",
+    "parents": [
+      {
+        "id": "011jVS4rb",
+        "type": "married"
+      },
+      {
+        "id": "PXACjDxmR",
+        "type": "blood"
+      }
+    ],
+    "children": [
+      {
+        "id": "Fbc9iwnJl",
+        "type": "blood"
+      }
+    ],
+    "siblings": [
+      {
+        "id": "HkqEDLvxE",
+        "type": "blood"
+      },
+      {
+        "id": "UIEjvLJMd",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "vRSjcaDGj",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "UIEjvLJMd",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "011jVS4rb",
+        "type": "married"
+      },
+      {
+        "id": "PXACjDxmR",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "HkqEDLvxE",
+        "type": "blood"
+      },
+      {
+        "id": "kuVISwh7w",
+        "type": "blood"
+      }
+    ],
+    "spouses": [
+      {
+        "id": "RZbkr5vAi",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "RZbkr5vAi",
+    "gender": "male",
+    "parents": [],
+    "children": [],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "UIEjvLJMd",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "vRSjcaDGj",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "Fbc9iwnJl",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "kuVISwh7w",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "Fbc9iwnJl",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "kuVISwh7w",
+        "type": "married"
+      },
+      {
+        "id": "vRSjcaDGj",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [],
+    "spouses": []
+  }
+]
