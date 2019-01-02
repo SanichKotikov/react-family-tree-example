@@ -24,7 +24,7 @@ class App extends React.Component {
           debug
           captureWheel
           min={0.5}
-          max={2}
+          max={2.5}
           className={styles.wrapper}
         >
           <ReactFamilyTree
