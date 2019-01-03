@@ -1,12 +1,12 @@
 {
   "name": "react-family-tree-example",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "classnames": "2.2.6",
     "pinch-zoom-pan": "2.0.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
-    "react-family-tree": "0.0.1",
+    "react-family-tree": "1.0.0",
     "typescript": "3.2.2"
   },
   "devDependencies": {
