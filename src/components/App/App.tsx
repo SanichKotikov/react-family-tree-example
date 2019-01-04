@@ -3,15 +3,28 @@ import PinchZoomPan from 'pinch-zoom-pan';
 import { IFamilyNode } from 'relatives-tree';
 import ReactFamilyTree from 'react-family-tree';
 import FamilyNode from '../FamilyNode/FamilyNode';
-import nodes from '../../sample.json';
 import styles from './App.module.css';
+
+import nodes from '../../sample.json';
+const myID = 'kuVISwh7w';
 
 const WIDTH = 70;
 const HEIGHT = 80;
 
-class App extends React.Component {
+interface State {
+  rootId: string;
+}
+
+class App extends React.Component<any, State> {
+
+  state: State = { rootId: myID };
+
+  onSubClick = (rootId: string) => this.setState({ rootId });
+  onResetClick = () => this.setState({ rootId: myID });
 
   render() {
+    const rootId = this.state.rootId;
+
     return (
       <div className={styles.root}>
         <header className={styles.header}>
@@ -29,23 +42,31 @@ class App extends React.Component {
         >
           <ReactFamilyTree
             nodes={nodes as IFamilyNode[]}
-            rootId={nodes[0].id}
+            rootId={rootId}
             width={WIDTH}
             height={HEIGHT}
             canvasClassName={styles.tree}
-            renderNode={(node: IFamilyNode, point) => (
+            renderNode={(node: IFamilyNode, options) => (
               <FamilyNode
                 key={node.id}
                 node={node}
+                isRoot={node.id === rootId}
+                hasSub={options.sub}
+                onSubClick={this.onSubClick}
                 style={{
                   width: WIDTH,
                   height: HEIGHT,
-                  transform: `translate(${point.x}px, ${point.y}px)`,
+                  transform: `translate(${options.x}px, ${options.y}px)`,
                 }}
               />
             )}
           />
         </PinchZoomPan>
+        {rootId !== myID && (
+          <div className={styles.reset} onClick={this.onResetClick}>
+            Reset
+          </div>
+        )}
       </div>
     );
   }

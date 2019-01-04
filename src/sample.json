@@ -95,7 +95,12 @@
         "type": "blood"
       }
     ],
-    "siblings": [],
+    "siblings": [
+      {
+        "id": "H-06WvsfJ",
+        "type": "blood"
+      }
+    ],
     "spouses": [
       {
         "id": "011jVS4rb",
@@ -109,7 +114,7 @@
     "parents": [
       {
         "id": "011jVS4rb",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "PXACjDxmR",
@@ -149,7 +154,7 @@
     "parents": [
       {
         "id": "011jVS4rb",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "PXACjDxmR",
@@ -220,7 +225,16 @@
   {
     "id": "vRSjcaDGj",
     "gender": "female",
-    "parents": [],
+    "parents": [
+      {
+        "id": "6vASIIxhd",
+        "type": "blood"
+      },
+      {
+        "id": "iFiwqrWx-",
+        "type": "blood"
+      }
+    ],
     "children": [
       {
         "id": "Fbc9iwnJl",
@@ -241,7 +255,7 @@
     "parents": [
       {
         "id": "kuVISwh7w",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "vRSjcaDGj",
@@ -314,6 +328,10 @@
       {
         "id": "PXACjDxmR",
         "type": "blood"
+      },
+      {
+        "id": "H-06WvsfJ",
+        "type": "blood"
       }
     ],
     "siblings": [],
@@ -361,7 +379,7 @@
     "parents": [
       {
         "id": "011jVS4rb",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "PXACjDxmR",
@@ -396,7 +414,7 @@
     "parents": [
       {
         "id": "RZbkr5vAi",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "UIEjvLJMd",
@@ -422,7 +440,7 @@
     "parents": [
       {
         "id": "RZbkr5vAi",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "UIEjvLJMd",
@@ -458,7 +476,7 @@
     "parents": [
       {
         "id": "RZbkr5vAi",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "UIEjvLJMd",
@@ -502,7 +520,7 @@
     "parents": [
       {
         "id": "ilad8NH6g",
-        "type": "married"
+        "type": "blood"
       },
       {
         "id": "JhSCcdFEP",
@@ -561,5 +579,59 @@
         "type": "married"
       }
     ]
+  },
+  {
+    "id": "6vASIIxhd",
+    "gender": "male",
+    "parents": [],
+    "children": [
+      {
+        "id": "vRSjcaDGj",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "iFiwqrWx-",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "iFiwqrWx-",
+    "gender": "female",
+    "parents": [],
+    "children": [
+      {
+        "id": "vRSjcaDGj",
+        "type": "blood"
+      }
+    ],
+    "siblings": [],
+    "spouses": [
+      {
+        "id": "6vASIIxhd",
+        "type": "married"
+      }
+    ]
+  },
+  {
+    "id": "H-06WvsfJ",
+    "gender": "female",
+    "parents": [
+      {
+        "id": "2DlrR0fK8",
+        "type": "blood"
+      }
+    ],
+    "children": [],
+    "siblings": [
+      {
+        "id": "PXACjDxmR",
+        "type": "blood"
+      }
+    ],
+    "spouses": []
   }
 ]
