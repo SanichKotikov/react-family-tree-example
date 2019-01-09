@@ -1,12 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
-import { IFamilyNode } from 'relatives-tree';
+import { IFamilyExtNode } from 'relatives-tree';
 import styles from './FamilyNode.module.css';
 
 interface Props {
-  node: IFamilyNode;
+  node: IFamilyExtNode;
   isRoot: boolean;
-  hasSub: boolean;
   onSubClick: (id: string) => void;
   style?: React.CSSProperties;
 }
@@ -15,11 +14,11 @@ class FamilyNode extends React.Component<Props> {
 
   onSubClick = () => {
     const { node, onSubClick } = this.props;
-    if (typeof onSubClick === 'function') onSubClick(node.id);
+    onSubClick(node.id);
   };
 
   render() {
-    const { node, isRoot, hasSub, style } = this.props;
+    const { node, isRoot, style } = this.props;
 
     return (
       <div className={styles.root} style={style}>
@@ -30,7 +29,7 @@ class FamilyNode extends React.Component<Props> {
             isRoot && styles.isRoot,
           )}
         />
-        {hasSub && (
+        {node.hasSubTree && (
           <div
             className={classNames(styles.sub, styles[node.gender])}
             onClick={this.onSubClick}
