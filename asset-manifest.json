@@ -1,13 +1,15 @@
 {
-  "main.css": "/react-family-tree-example/static/css/main.a3136b19.chunk.css",
-  "main.js": "/react-family-tree-example/static/js/main.469d7ff8.chunk.js",
-  "main.js.map": "/react-family-tree-example/static/js/main.469d7ff8.chunk.js.map",
-  "static/js/1.7b758f13.chunk.js": "/react-family-tree-example/static/js/1.7b758f13.chunk.js",
-  "static/js/1.7b758f13.chunk.js.map": "/react-family-tree-example/static/js/1.7b758f13.chunk.js.map",
-  "runtime~main.js": "/react-family-tree-example/static/js/runtime~main.6679984b.js",
-  "runtime~main.js.map": "/react-family-tree-example/static/js/runtime~main.6679984b.js.map",
-  "static/css/main.a3136b19.chunk.css.map": "/react-family-tree-example/static/css/main.a3136b19.chunk.css.map",
-  "index.html": "/react-family-tree-example/index.html",
-  "precache-manifest.2212cc30efcbf2969dee07be9b352a8c.js": "/react-family-tree-example/precache-manifest.2212cc30efcbf2969dee07be9b352a8c.js",
-  "service-worker.js": "/react-family-tree-example/service-worker.js"
+  "files": {
+    "main.css": "/react-family-tree-example/static/css/main.af935d8c.chunk.css",
+    "main.js": "/react-family-tree-example/static/js/main.b93fb8e7.chunk.js",
+    "main.js.map": "/react-family-tree-example/static/js/main.b93fb8e7.chunk.js.map",
+    "runtime~main.js": "/react-family-tree-example/static/js/runtime~main.25f0ace7.js",
+    "runtime~main.js.map": "/react-family-tree-example/static/js/runtime~main.25f0ace7.js.map",
+    "static/js/2.267ed325.chunk.js": "/react-family-tree-example/static/js/2.267ed325.chunk.js",
+    "static/js/2.267ed325.chunk.js.map": "/react-family-tree-example/static/js/2.267ed325.chunk.js.map",
+    "index.html": "/react-family-tree-example/index.html",
+    "precache-manifest.dbc505900e204db9ca858b4bd26ee562.js": "/react-family-tree-example/precache-manifest.dbc505900e204db9ca858b4bd26ee562.js",
+    "service-worker.js": "/react-family-tree-example/service-worker.js",
+    "static/css/main.af935d8c.chunk.css.map": "/react-family-tree-example/static/css/main.af935d8c.chunk.css.map"
+  }
 }
