@@ -10,16 +10,8 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-class FamilyNode extends React.Component<Props> {
-
-  onSubClick = () => {
-    const { node, onSubClick } = this.props;
-    onSubClick(node.id);
-  };
-
-  render() {
-    const { node, isRoot, style } = this.props;
-
+export default React.memo<Props>(
+  function FamilyNode({ node, isRoot, onSubClick, style }) {
     return (
       <div className={styles.root} style={style}>
         <div
@@ -32,13 +24,10 @@ class FamilyNode extends React.Component<Props> {
         {node.hasSubTree && (
           <div
             className={classNames(styles.sub, styles[node.gender])}
-            onClick={this.onSubClick}
+            onClick={() => onSubClick(node.id)}
           />
         )}
       </div>
     );
   }
-
-}
-
-export default FamilyNode;
+);

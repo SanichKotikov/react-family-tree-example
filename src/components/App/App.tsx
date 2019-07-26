@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import PinchZoomPan from 'pinch-zoom-pan';
 import { IFamilyNode, IFamilyExtNode } from 'relatives-tree';
 import ReactFamilyTree from 'react-family-tree';
@@ -11,19 +11,10 @@ const myID = 'kuVISwh7w';
 const WIDTH = 70;
 const HEIGHT = 80;
 
-interface State {
-  rootId: string;
-}
-
-class App extends React.Component<any, State> {
-
-  state: State = { rootId: myID };
-
-  onSubClick = (rootId: string) => this.setState({ rootId });
-  onResetClick = () => this.setState({ rootId: myID });
-
-  render() {
-    const rootId = this.state.rootId;
+export default React.memo<{}>(
+  function App() {
+    const [rootId, setRootId] = useState<string>(myID);
+    const onResetClick = useCallback(() => setRootId(myID), []);
 
     return (
       <div className={styles.root}>
@@ -51,7 +42,7 @@ class App extends React.Component<any, State> {
                 key={node.id}
                 node={node}
                 isRoot={node.id === rootId}
-                onSubClick={this.onSubClick}
+                onSubClick={setRootId}
                 style={{
                   width: WIDTH,
                   height: HEIGHT,
@@ -62,14 +53,11 @@ class App extends React.Component<any, State> {
           />
         </PinchZoomPan>
         {rootId !== myID && (
-          <div className={styles.reset} onClick={this.onResetClick}>
+          <div className={styles.reset} onClick={onResetClick}>
             Reset
           </div>
         )}
       </div>
     );
   }
-
-}
-
-export default App;
+);
