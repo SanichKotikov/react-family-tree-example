@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { IFamilyExtNode } from 'relatives-tree';
+import { IFamilyExtNode } from 'relatives-tree/lib/types';
 import styles from './FamilyNode.module.css';
 
 interface Props {

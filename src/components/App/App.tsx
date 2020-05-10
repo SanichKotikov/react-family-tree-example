@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import PinchZoomPan from 'pinch-zoom-pan';
-import { IFamilyNode, IFamilyExtNode } from 'relatives-tree';
+import { IFamilyNode, IFamilyExtNode } from 'relatives-tree/lib/types';
+import nodes from 'relatives-tree/samples/average-tree.json';
 import ReactFamilyTree from 'react-family-tree';
 import FamilyNode from '../FamilyNode/FamilyNode';
 import styles from './App.module.css';
 
-import nodes from '../../sample.json';
 const myID = 'kuVISwh7w';
 
 const WIDTH = 70;
@@ -36,7 +36,7 @@ export default React.memo<{}>(
             rootId={rootId}
             width={WIDTH}
             height={HEIGHT}
-            canvasClassName={styles.tree}
+            className={styles.tree}
             renderNode={(node: IFamilyExtNode) => (
               <FamilyNode
                 key={node.id}
