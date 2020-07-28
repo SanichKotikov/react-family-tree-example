@@ -1,9 +1,10 @@
 import React, { useState, useCallback } from 'react';
-import PinchZoomPan from 'pinch-zoom-pan';
 import { IFamilyNode, IFamilyExtNode } from 'relatives-tree/lib/types';
 import nodes from 'relatives-tree/samples/average-tree.json';
 import ReactFamilyTree from 'react-family-tree';
+import PinchZoomPan from '../PinchZoomPan/PinchZoomPan';
 import FamilyNode from '../FamilyNode/FamilyNode';
+
 import styles from './App.module.css';
 
 const myID = 'kuVISwh7w';
@@ -25,10 +26,9 @@ export default React.memo<{}>(
           <a href="https://github.com/SanichKotikov/react-family-tree-example">GitHub</a>
         </header>
         <PinchZoomPan
-          debug
-          captureWheel
           min={0.5}
           max={2.5}
+          captureWheel
           className={styles.wrapper}
         >
           <ReactFamilyTree

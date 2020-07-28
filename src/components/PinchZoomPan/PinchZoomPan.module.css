@@ -1,0 +1,19 @@
+.root {
+  position: relative;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.point {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform: translate(0, 0) scale(1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.canvas {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}

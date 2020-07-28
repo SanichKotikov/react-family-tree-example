@@ -3,7 +3,7 @@
   "version": "2.0.2",
   "dependencies": {
     "classnames": "2.2.6",
-    "pinch-zoom-pan": "2.0.0",
+    "pinch-zoom-pan": "3.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-family-tree": "2.0.2",
