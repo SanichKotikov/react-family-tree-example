@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { IFamilyNode, IFamilyExtNode } from 'relatives-tree/lib/types';
+import { Node, ExtNode } from 'relatives-tree/lib/types';
 import nodes from 'relatives-tree/samples/average-tree.json';
 import ReactFamilyTree from 'react-family-tree';
 import PinchZoomPan from '../PinchZoomPan/PinchZoomPan';
@@ -32,12 +32,12 @@ export default React.memo<{}>(
           className={styles.wrapper}
         >
           <ReactFamilyTree
-            nodes={nodes as IFamilyNode[]}
+            nodes={nodes as Node[]}
             rootId={rootId}
             width={WIDTH}
             height={HEIGHT}
             className={styles.tree}
-            renderNode={(node: IFamilyExtNode) => (
+            renderNode={(node: ExtNode) => (
               <FamilyNode
                 key={node.id}
                 node={node}
