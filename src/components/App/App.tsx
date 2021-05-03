@@ -35,23 +35,46 @@ const SOURCES: { [key: string]: Source } = {
   'test-tree-n2.json': testTreeN2 as Source
 }
 
+const URL = 'URL (Gist, Paste.bin, ...)'
+
 export default React.memo<{}>(
   function App() {
     const [source, setSource] = useState<string>(DEFAULT_SOURCE);
-    const [nodes, setNodes] = useState<Source>(SOURCES[source]);
-    const myId = SOURCES[source][0].id
-    const [rootId, setRootId] = useState<string>(myId);
+    const [nodes, setNodes] = useState<Source>([]);
+    const [myId, setMyId] = useState<string>('');
+    const [rootId, setRootId] = useState<string>('');
 
     useEffect(() => {
-      const newNodes = SOURCES[source];
+      const loadData = async () => {
+        let newNodes;
 
-      setRootId(newNodes[0].id);
-      setNodes(newNodes);
+        if (source === URL) {
+          const response = await fetch(prompt('Paste the url to load:') || '');
+
+          newNodes = await response.json()
+        } else {
+          newNodes = SOURCES[source];
+        }
+
+        if (newNodes) {
+          setNodes([]); // Avoid invalid references to unknown nodes
+          setRootId(newNodes[0].id);
+          setMyId(newNodes[0].id);
+          setNodes(newNodes);
+        }
+      }
+
+      loadData();
     }, [source])
 
     const onResetClick = useCallback(() => setRootId(myId), [myId]);
     const onSetSource = (event: React.ChangeEvent<HTMLSelectElement>) => {
       setSource(event.target.value)
+    }
+
+    const sources = {
+      ...SOURCES,
+      [URL]: []
     }
 
     return (
@@ -64,7 +87,7 @@ export default React.memo<{}>(
           <div>
             <span>Source: </span>
             <select onChange={onSetSource} defaultValue={source}>
-              {Object.keys(SOURCES).map((item) => (
+              {Object.keys(sources).map((item) => (
                 <option key={item} value={item}>{item}</option>
               ))}
             </select>
@@ -72,33 +95,35 @@ export default React.memo<{}>(
 
           <a href="https://github.com/SanichKotikov/react-family-tree-example">GitHub</a>
         </header>
-        <PinchZoomPan
-          min={0.5}
-          max={2.5}
-          captureWheel
-          className={styles.wrapper}
-        >
-          <ReactFamilyTree
-            nodes={nodes as Node[]}
-            rootId={rootId}
-            width={WIDTH}
-            height={HEIGHT}
-            className={styles.tree}
-            renderNode={(node: ExtNode) => (
-              <FamilyNode
-                key={node.id}
-                node={node}
-                isRoot={node.id === rootId}
-                onSubClick={setRootId}
-                style={{
-                  width: WIDTH,
-                  height: HEIGHT,
-                  transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
-                }}
-              />
-            )}
-          />
-        </PinchZoomPan>
+        {nodes.length > 0 && (
+          <PinchZoomPan
+            min={0.5}
+            max={2.5}
+            captureWheel
+            className={styles.wrapper}
+          >
+            <ReactFamilyTree
+              nodes={nodes as Node[]}
+              rootId={rootId}
+              width={WIDTH}
+              height={HEIGHT}
+              className={styles.tree}
+              renderNode={(node: ExtNode) => (
+                <FamilyNode
+                  key={node.id}
+                  node={node}
+                  isRoot={node.id === rootId}
+                  onSubClick={setRootId}
+                  style={{
+                    width: WIDTH,
+                    height: HEIGHT,
+                    transform: `translate(${node.left * (WIDTH / 2)}px, ${node.top * (HEIGHT / 2)}px)`,
+                  }}
+                />
+              )}
+            />
+          </PinchZoomPan>
+        )}
         {rootId !== myId && (
           <div className={styles.reset} onClick={onResetClick}>
             Reset

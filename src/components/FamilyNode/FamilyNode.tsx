@@ -13,7 +13,7 @@ interface Props {
 export default React.memo<Props>(
   function FamilyNode({ node, isRoot, onSubClick, style }) {
     return (
-      <div className={styles.root} style={style}>
+      <div className={styles.root} style={style} title={node.id}>
         <div
           className={classNames(
             styles.inner,
