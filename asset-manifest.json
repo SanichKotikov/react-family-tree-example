@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react-family-tree-example/static/css/main.4724b0ed.chunk.css",
-    "main.js": "/react-family-tree-example/static/js/main.f720a96d.chunk.js",
-    "main.js.map": "/react-family-tree-example/static/js/main.f720a96d.chunk.js.map",
+    "main.js": "/react-family-tree-example/static/js/main.42a4cc62.chunk.js",
+    "main.js.map": "/react-family-tree-example/static/js/main.42a4cc62.chunk.js.map",
     "runtime-main.js": "/react-family-tree-example/static/js/runtime-main.3c54b5a5.js",
     "runtime-main.js.map": "/react-family-tree-example/static/js/runtime-main.3c54b5a5.js.map",
-    "static/js/2.f66e7d92.chunk.js": "/react-family-tree-example/static/js/2.f66e7d92.chunk.js",
-    "static/js/2.f66e7d92.chunk.js.map": "/react-family-tree-example/static/js/2.f66e7d92.chunk.js.map",
+    "static/js/2.e04f3846.chunk.js": "/react-family-tree-example/static/js/2.e04f3846.chunk.js",
+    "static/js/2.e04f3846.chunk.js.map": "/react-family-tree-example/static/js/2.e04f3846.chunk.js.map",
     "index.html": "/react-family-tree-example/index.html",
     "static/css/main.4724b0ed.chunk.css.map": "/react-family-tree-example/static/css/main.4724b0ed.chunk.css.map",
-    "static/js/2.f66e7d92.chunk.js.LICENSE.txt": "/react-family-tree-example/static/js/2.f66e7d92.chunk.js.LICENSE.txt"
+    "static/js/2.e04f3846.chunk.js.LICENSE.txt": "/react-family-tree-example/static/js/2.e04f3846.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3c54b5a5.js",
-    "static/js/2.f66e7d92.chunk.js",
+    "static/js/2.e04f3846.chunk.js",
     "static/css/main.4724b0ed.chunk.css",
-    "static/js/main.f720a96d.chunk.js"
+    "static/js/main.42a4cc62.chunk.js"
   ]
 }
