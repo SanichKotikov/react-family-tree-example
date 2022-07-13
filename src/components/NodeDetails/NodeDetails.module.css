@@ -1,0 +1,38 @@
+.root {
+  padding: 10px;
+  font-family: monospace;
+  font-size: 9px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 10px;
+}
+
+.title {
+  margin: 0;
+}
+
+.close {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: #888;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #666;
+}

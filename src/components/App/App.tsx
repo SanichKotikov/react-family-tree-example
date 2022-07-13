@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useMemo, useState, useEffect, useCallback } from 'react';
 import { Node, ExtNode } from 'relatives-tree/lib/types';
+import treePackage from 'relatives-tree/package.json';
 import ReactFamilyTree from 'react-family-tree';
 import PinchZoomPan from '../PinchZoomPan/PinchZoomPan';
 import FamilyNode from '../FamilyNode/FamilyNode';
+import { NodeDetails } from '../NodeDetails/NodeDetails';
 
 import averageTree from 'relatives-tree/samples/average-tree.json';
 import couple from 'relatives-tree/samples/couple.json';
@@ -19,7 +21,7 @@ import styles from './App.module.css';
 const WIDTH = 70;
 const HEIGHT = 80;
 
-const DEFAULT_SOURCE = 'average-tree.json'
+const DEFAULT_SOURCE = 'average-tree.json';
 
 type Source = Array<Node>
 
@@ -32,10 +34,10 @@ const SOURCES: { [key: string]: Source } = {
   'several-spouses.json': severalSpouses as Source,
   'simple-family.json': simpleFamily as Source,
   'test-tree-n1.json': testTreeN1 as Source,
-  'test-tree-n2.json': testTreeN2 as Source
-}
+  'test-tree-n2.json': testTreeN2 as Source,
+};
 
-const URL = 'URL (Gist, Paste.bin, ...)'
+const URL = 'URL (Gist, Paste.bin, ...)';
 
 export default React.memo<{}>(
   function App() {
@@ -43,6 +45,8 @@ export default React.memo<{}>(
     const [nodes, setNodes] = useState<Source>([]);
     const [myId, setMyId] = useState<string>('');
     const [rootId, setRootId] = useState<string>('');
+    const [selectId, setSelectId] = useState<string>();
+    const [hoverId, setHoverId] = useState<string>();
 
     useEffect(() => {
       const loadData = async () => {
@@ -51,8 +55,9 @@ export default React.memo<{}>(
         if (source === URL) {
           const response = await fetch(prompt('Paste the url to load:') || '');
 
-          newNodes = await response.json()
-        } else {
+          newNodes = await response.json();
+        }
+        else {
           newNodes = SOURCES[source];
         }
 
@@ -62,26 +67,31 @@ export default React.memo<{}>(
           setMyId(newNodes[0].id);
           setNodes(newNodes);
         }
-      }
+      };
 
-      loadData();
-    }, [source])
+      void loadData();
+    }, [source]);
 
     const onResetClick = useCallback(() => setRootId(myId), [myId]);
     const onSetSource = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      setSource(event.target.value)
-    }
+      setSource(event.target.value);
+    };
 
     const sources = {
       ...SOURCES,
-      [URL]: []
-    }
+      [URL]: [],
+    };
+
+    const selected = useMemo(() => nodes.find(item => item.id === selectId), [nodes, selectId]);
 
     return (
       <div className={styles.root}>
         <header className={styles.header}>
           <h1 className={styles.title}>
             FamilyTree demo
+            <span className={styles.version}>
+              core: {treePackage.version}
+            </span>
           </h1>
 
           <div>
@@ -113,6 +123,8 @@ export default React.memo<{}>(
                   key={node.id}
                   node={node}
                   isRoot={node.id === rootId}
+                  isHover={node.id === hoverId}
+                  onClick={setSelectId}
                   onSubClick={setRootId}
                   style={{
                     width: WIDTH,
@@ -129,7 +141,16 @@ export default React.memo<{}>(
             Reset
           </div>
         )}
+        {selected && (
+          <NodeDetails
+            node={selected}
+            className={styles.details}
+            onSelect={setSelectId}
+            onHover={setHoverId}
+            onClear={() => setHoverId(undefined)}
+          />
+        )}
       </div>
     );
-  }
+  },
 );

@@ -7,8 +7,12 @@
 .inner {
   display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
   border: 2px solid rgba(0, 0, 0, .2);
   border-radius: 10px 0;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .male {
@@ -20,7 +24,17 @@
 }
 
 .isRoot {
-  border-color: rgba(0, 0, 0, .4);;
+  border-color: rgba(0, 0, 0, .4);
+}
+
+.isHover {
+  border-color: rgba(0, 0, 0, .8);
+}
+
+.id {
+  font-size: 7px;
+  line-height: 1;
+  opacity: .5;
 }
 
 .sub {

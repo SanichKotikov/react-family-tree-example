@@ -17,10 +17,23 @@
 }
 
 .title {
+  display: flex;
   margin: 0;
   padding: 0;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   font-weight: 500;
+}
+
+.version {
+  display: block;
+  padding: 4px 6px;
+  font-size: 10px;
+  line-height: 1;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .wrapper {
@@ -43,4 +56,10 @@
   border-radius: 4px;
   line-height: 1;
   cursor: pointer;
+}
+
+.details {
+  position: absolute;
+  left: 10px;
+  top: 60px;
 }

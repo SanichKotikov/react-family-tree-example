@@ -1,0 +1,11 @@
+.item {
+  padding: 4px 6px;
+  line-height: 1;
+  border-radius: 2px;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #eee;
+}

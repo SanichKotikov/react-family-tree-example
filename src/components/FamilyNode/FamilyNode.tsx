@@ -1,33 +1,42 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import classNames from 'classnames';
 import { ExtNode } from 'relatives-tree/lib/types';
-import styles from './FamilyNode.module.css';
+import css from './FamilyNode.module.css';
 
-interface Props {
+interface NodeProps {
   node: ExtNode;
   isRoot: boolean;
+  isHover?: boolean;
+  onClick: (id: string) => void;
   onSubClick: (id: string) => void;
   style?: React.CSSProperties;
 }
 
-export default React.memo<Props>(
-  function FamilyNode({ node, isRoot, onSubClick, style }) {
+export default React.memo(
+  function FamilyNode({ node, isRoot, isHover, onClick, onSubClick, style }: NodeProps) {
+    const clickHandler = useCallback(() => onClick(node.id), [node.id, onClick]);
+    const clickSubHandler = useCallback(() => onSubClick(node.id), [node.id, onSubClick]);
+
     return (
-      <div className={styles.root} style={style} title={node.id}>
+      <div className={css.root} style={style}>
         <div
           className={classNames(
-            styles.inner,
-            styles[node.gender],
-            isRoot && styles.isRoot,
+            css.inner,
+            css[node.gender],
+            isRoot && css.isRoot,
+            isHover && css.isHover,
           )}
-        />
+          onClick={clickHandler}
+        >
+          <div className={css.id}>{node.id}</div>
+        </div>
         {node.hasSubTree && (
           <div
-            className={classNames(styles.sub, styles[node.gender])}
-            onClick={() => onSubClick(node.id)}
+            className={classNames(css.sub, css[node.gender])}
+            onClick={clickSubHandler}
           />
         )}
       </div>
     );
-  }
+  },
 );
