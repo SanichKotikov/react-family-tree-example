@@ -4,7 +4,7 @@ import { create } from 'pinch-zoom-pan';
 
 import css from './PinchZoomPan.module.css';
 
-interface IProps {
+interface PinchZoomPanProps {
   min?: number;
   max?: number;
   captureWheel?: boolean;
@@ -13,8 +13,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-export default React.memo<IProps>(
-  function PinchZoomPan({ min, max, captureWheel, className, style, children }) {
+export const PinchZoomPan = React.memo(
+  function PinchZoomPan({ min, max, captureWheel, className, style, children }: PinchZoomPanProps) {
     const root = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

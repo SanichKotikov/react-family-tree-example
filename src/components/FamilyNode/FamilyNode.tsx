@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
-import { ExtNode } from 'relatives-tree/lib/types';
+import type { ExtNode } from 'relatives-tree/lib/types';
 import css from './FamilyNode.module.css';
 
-interface NodeProps {
+interface FamilyNodeProps {
   node: ExtNode;
   isRoot: boolean;
   isHover?: boolean;
@@ -12,8 +12,8 @@ interface NodeProps {
   style?: React.CSSProperties;
 }
 
-export default React.memo(
-  function FamilyNode({ node, isRoot, isHover, onClick, onSubClick, style }: NodeProps) {
+export const FamilyNode = React.memo(
+  function FamilyNode({ node, isRoot, isHover, onClick, onSubClick, style }: FamilyNodeProps) {
     const clickHandler = useCallback(() => onClick(node.id), [node.id, onClick]);
     const clickSubHandler = useCallback(() => onSubClick(node.id), [node.id, onSubClick]);
 
