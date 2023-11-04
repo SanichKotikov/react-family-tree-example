@@ -20,7 +20,8 @@ export const PinchZoomPan = React.memo(
     useEffect(() => {
       const element = root.current;
       if (!element) return;
-      return create({ element, minZoom: min, maxZoom: max, captureWheel });
+      const canvas = create({ element, minZoom: min, maxZoom: max, captureWheel });
+      return canvas.destroy;
     }, [min, max, captureWheel]);
 
     return (
