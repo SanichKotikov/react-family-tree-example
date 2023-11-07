@@ -7,8 +7,7 @@
 
 .header {
   display: flex;
-  height: 48px;
-  padding: 0 20px;
+  padding: 10px 20px;
   align-items: center;
   justify-content: space-between;
   background: #fff;
@@ -62,4 +61,15 @@
   position: absolute;
   left: 10px;
   top: 60px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details {
+    top: 100px;
+  }
 }
